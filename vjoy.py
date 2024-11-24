@@ -2,7 +2,7 @@ import keyboard as k
 import win32api,win32gui,win32con
 
 status = 0
-o_pos = (285, 630)
+o_pos = (350, 630)			# 摇杆中心坐标
 w_pos = (o_pos[0], o_pos[1]-50)
 s_pos = (o_pos[0], o_pos[1]+50)
 a_pos = (o_pos[0]-50, o_pos[1])
@@ -23,7 +23,7 @@ hwnd = hwnds[int(input("输入你需要的窗口编号："))-1]
  
 '''根据GetWindowRect拿到主窗口的左顶点的位置坐标(x,y)和窗口的宽高(w*h)'''
 rect = win32gui.GetWindowRect(hwnd)
-print(rect)
+# print(rect,hwnd)
 x,y=rect[0],rect[1]
 w,h=rect[2] - x,rect[3] - y
 long_position = win32api.MAKELONG(x, y)
@@ -65,4 +65,5 @@ while True:
                 down(d_pos[0],d_pos[1])
         status = 0
     elif event.event_type == k.KEY_UP:
-        up()
+        if (not k.is_pressed("w")) and (not k.is_pressed("a")) and (not k.is_pressed("s")) and (not k.is_pressed("d")):
+            up()
