@@ -37,6 +37,7 @@ jobs:
           spec: './vjoy.py'
           requirements: './r.txt'
           upload_exe_with_name: 'vjoy'
+          exe_path: "./dist"
           options: --name "vjoy", -F
     - name: Release
       uses: ncipollo/release-action@v1
