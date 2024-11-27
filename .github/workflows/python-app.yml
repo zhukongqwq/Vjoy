@@ -43,7 +43,7 @@ jobs:
       uses: ncipollo/release-action@v1
       with:
           artifacts: "./dist"
-          bodyFile: "vjoy.exe"
+          bodyFile: "./dist/vjoy.exe"
           tag: "v1.0.0"
           
 
