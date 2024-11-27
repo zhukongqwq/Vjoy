@@ -5,8 +5,9 @@ name: Python application
 
 on:
   push:
-    tags:
-      - "*"
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 permissions:
   contents: write
