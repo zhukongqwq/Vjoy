@@ -21,15 +21,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    # - name: Set up Python 3.10
-    #   uses: actions/setup-python@v3
-    #   with:
-    #     python-version: "3.10"
-    # - name: Install dependencies
-    #   run: |
-    #     python -m pip install --upgrade pip
-    #     pip install -r r.txt
-        
     - name: Create Executable
       uses: sayyid5416/pyinstaller@v1
       with:
@@ -39,13 +30,12 @@ jobs:
           upload_exe_with_name: 'vjoy'
           exe_path: "./dist"
           options: --name "vjoy", -F
-    - name: Release
-      uses: ncipollo/release-action@v1
+    - name: Upload # 上传
+      uses: softprops/action-gh-release@v2 # 使用第三方actions 上传
+      if: startsWith(github.ref, 'refs/tags/') # 仅在tag时上传
       with:
-          artifacts: "./dist"
-          bodyFile: "./dist/vjoy.exe"
-          tag: "v1.0.0"
-          
+        files: ./dist/vjoy.exe # 上传的文件
+            
 
     # - uses: actions/upload-artifact@v4
     #   with:
