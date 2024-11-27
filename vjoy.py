@@ -45,7 +45,8 @@ def up():
 
 while True:
     # 等待下一个事件。
-    event = k.read_event()
+    # event = k.read_event()
+    k.wait()
     if event.event_type == k.KEY_DOWN:
         if k.is_pressed("w") and k.is_pressed("d"):
             down(d_pos[0],w_pos[1])
