@@ -27,6 +27,7 @@ rect = win32gui.GetWindowRect(hwnd)
 x,y=rect[0],rect[1]
 w,h=rect[2] - x,rect[3] - y
 long_position = win32api.MAKELONG(x, y)
+print("虚拟摇杆已启动")
 
 def down(x,y):
     global status, long_position
