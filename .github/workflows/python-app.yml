@@ -3,10 +3,7 @@
 
 name: Python application
 
-on: 
-  push:
-    tags:
-      - '*'
+on: push
 
 permissions:
   contents: write
