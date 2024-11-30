@@ -3,32 +3,22 @@
 
 # 使用
 
-### 1.安装python（建议3.10及以上）
+### 1.从[release](https://github.com/zhukongqwq/Vjoy/releases/latest)下载exe文件
 
-### 2.用git下载源码
+### 2.运行exe文件
 
-```git
-git clone https://github.com/zhukongqwq/Vjoy.git
-```
-
-### 3.pip安装所需库
-
-```python
-pip install -r r.txt
-```
-
-### 4.首先运行set_opos.py，获取摇杆中心坐标
+初次使用会要求设置摇杆中心坐标：
 
 - 打开云游戏，进入有摇杆的游戏界面（建议全屏显示）
 
-- 将鼠标放在摇杆中心位置，用Alt+Tab快捷键切换到运行python文件的窗口（如cmd，python编辑器）并使用快捷键运行set_opos.py，选择你的云游戏窗口，**在此过程中不要移动鼠标**
+- 将鼠标放在摇杆中心位置，按下"Ctrl+Alt+S"键（先关闭设置提示的窗口再按键）
 
-  ![untitled](untitled.png)
+  ![untitled](./res/untitled.png)
 
-### 5.运行vjoy.py
+### 3.运行主程序
 
-- 打开vjoy.py，用控制台输出的坐标替换o_pos的数据
-- 运行vjoy.py，选择云游戏窗口
-- 回到游戏，就可以用键盘操控摇杆了
+- 返回主界面
+- 选择你的游戏窗口
+- 按下开始，虚拟摇杆运行
 
 由于作者水平有限，代码运行不是很流畅，可能存在一些bug，欢迎提出issue
